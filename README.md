@@ -1,8 +1,6 @@
-# Bird
+# Bird [![Build Status](https://travis-ci.org/vsouza/Bird.svg)](https://travis-ci.org/vsouza/Bird)
 
-[![Build Status](https://travis-ci.org/vsouza/Bird.svg)](https://travis-ci.org/vsouza/Bird)
-
-iOS and Android Push Notifications
+iOS and Android Push Notifications.
 
 ## License
 
