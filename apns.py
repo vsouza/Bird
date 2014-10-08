@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding: utf-8
-import time
 import json
 import struct
 import socket
@@ -14,7 +13,6 @@ class Apns(object):
     deviceToken = config.device_token
     pushServer = "gateway.sandbox.push.apple.com"
     port = 2195
-    timeout = 6000
     keyfile = config.certificates_dir + "/key.pem"
     certfile = config.certificates_dir + "/pushcert.pem"
 
@@ -43,9 +41,9 @@ class Apns(object):
         ssl_sock.write(message)
         
         ssl_sock.close()
-
+        
         return True
 
 if __name__ == '__main__':
-    x = Apns()
-    x.send(1, "teste", "default")
+    push = Apns()
+    push.send(1, "teste", "default")
