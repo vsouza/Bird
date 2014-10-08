@@ -18,7 +18,9 @@ iOS and Android Push Notifications in one lib.
 
 ### Status
 
-__in development__
+__iOS__ => √
+
+__Android__ => in development
 
 ## License
 
