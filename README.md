@@ -1,10 +1,10 @@
 
 
 [![Bird Project](https://avatars0.githubusercontent.com/u/9083046?v=2&s=200)](https://github.com/BirdPush) 
-#Push Server [![Build Status](https://travis-ci.org/vsouza/Bird.svg)](https://travis-ci.org/vsouza/Bird)
+#Bird Push Server [![Build Status](https://travis-ci.org/vsouza/Bird.svg)](https://travis-ci.org/vsouza/Bird)
 
 
-iOS and Android Push Notifications in one lib.
+iOS, Android and Windows Push Notifications in one lib.
 
 ### APNs
 
