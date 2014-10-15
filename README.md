@@ -12,8 +12,6 @@ iOS and Android Push Notifications in one lib.
 
 <p>"Apple Push Notification service (APNs for short) is the centerpiece of the push notifications feature. It is a robust and highly efficient service for propagating information to iOS and OS X devices. Each device establishes an accredited and encrypted IP connection with the service and receives notifications over this persistent connection. If a notification for an application arrives when that application is not running, the device alerts the user that the application has data waiting for it.</p>
 
-<p>Software developers (“providers”) originate the notifications in their server software. The provider connects with APNs through a persistent and secure channel while monitoring incoming data intended for their client applications. When new data for an application arrives, the provider prepares and sends a notification through the channel to APNs, which pushes the notification to the target device."</p>
-
 ### GCM
 
 [Reference](https://developer.android.com/google/gcm/index.html)
@@ -25,6 +23,8 @@ iOS and Android Push Notifications in one lib.
 __iOS__ => √
 
 __Android__ => in development
+
+__Windows__ => in development
 
 ## License
 
