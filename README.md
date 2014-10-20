@@ -1,7 +1,8 @@
 
 
-[![Bird Project](https://avatars0.githubusercontent.com/u/9083046?v=2&s=200)](https://github.com/BirdPush)
-#Bird Push Server
+
+#Bird Push Server 
+[![Bird Project](https://raw.githubusercontent.com/vsouza/Bird/master/icon.png)](https://github.com/BirdPush)
 
 iOS, Android and Windows Push Notifications in one lib.
 
