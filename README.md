@@ -1,6 +1,3 @@
-
-
-
 #Bird Push Server 
 [![Bird Project](https://raw.githubusercontent.com/vsouza/Bird/master/icon.png)](https://github.com/BirdPush)
 
