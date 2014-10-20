@@ -12,7 +12,7 @@ You can use the Bird in the way that suits you in any programming language or ev
 __In PHP:__
 
 ```php
-$ cmd = 'python apns.py --badge 1 --message "Test message" --sound "default"';
+$cmd = 'python apns.py --badge 1 --message "Test message" --sound "default"';
 exec($cmd);
 ```
 __In Command line__
