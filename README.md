@@ -1,22 +1,33 @@
 
 
-[![Bird Project](https://avatars0.githubusercontent.com/u/9083046?v=2&s=200)](https://github.com/BirdPush) 
-#Bird Push Server [![Build Status](https://travis-ci.org/vsouza/Bird.svg)](https://travis-ci.org/vsouza/Bird)
-
+[![Bird Project](https://avatars0.githubusercontent.com/u/9083046?v=2&s=200)](https://github.com/BirdPush)
+#Bird Push Server
 
 iOS, Android and Windows Push Notifications in one lib.
 
-### APNs
+Bird is a project to facilitate the integration of push messages on any system. Enjoy and send your pull request.
 
-[Reference](https://developer.apple.com/library/IOs/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html)
+## How To use
 
-<p>"Apple Push Notification service (APNs for short) is the centerpiece of the push notifications feature. It is a robust and highly efficient service for propagating information to iOS and OS X devices. Each device establishes an accredited and encrypted IP connection with the service and receives notifications over this persistent connection. If a notification for an application arrives when that application is not running, the device alerts the user that the application has data waiting for it.</p>
+You can use the Bird in the way that suits you in any programming language or even within your project in Python.
 
-### GCM
+__In PHP:__
 
-[Reference](https://developer.android.com/google/gcm/index.html)
+```php
+$ cmd = 'python apns.py --badge 1 --message "Test message" --sound "default"';
+exec($cmd);
+```
+__In Command line__
 
-<p>"Google Cloud Messaging for Android (GCM) is a service that allows you to send data from your server to your users' Android-powered device, and also to receive messages from devices on the same connection. The GCM service handles all aspects of queueing of messages and delivery to the target Android application running on the target device. GCM is completely free no matter how big your messaging needs are, and there are no quotas." </p>
+```shell
+python apns.py --badge  1 --message "Test message" --sound "default"
+```
+
+## Reference
+
+ * [APNS](https://developer.apple.com/library/IOs/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html)
+ * [GCM](https://developer.android.com/google/gcm/index.html)
+
 
 ### Status
 

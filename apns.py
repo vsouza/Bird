@@ -6,44 +6,42 @@ import socket
 import ssl
 import binascii
 import config
+import click
 
-class Apns(object):
-    """Send push notifications to iOS devices."""
-
-    deviceToken = config.device_token
-    pushServer = "gateway.sandbox.push.apple.com"
-    port = 2195
-    keyfile = config.certificates_dir + "/key.pem"
-    certfile = config.certificates_dir + "/pushcert.pem"
-
-    def __init__(self):
-        super(Apns, self).__init__()
+deviceToken = config.device_token
+pushServer = "gateway.sandbox.push.apple.com"
+port = 2195
+keyfile = config.certificates_dir + "/key.pem"
+certfile = config.certificates_dir + "/pushcert.pem"
 
 
-    def send(self, badge, message, sound):
+@click.command()
+@click.option('--badge', default='1', help='Number of notification.')
+@click.option('--message', default="test message", help='string of message')
+@click.option('--sound', default="default", help='what sound you want?')
+def send(badge, message, sound):
 
-        body = {}
-        body['aps'] = {'badge':badge, 'alert': message, 'sound': sound}
+    body = {}
+    body['aps'] = {'badge':badge, 'alert': message, 'sound': sound}
 
-        s = socket.socket(
-            socket.AF_INET, socket.SOCK_STREAM)
+    s = socket.socket(
+        socket.AF_INET, socket.SOCK_STREAM)
 
-        s.connect((self.pushServer, self.port))
-        ssl_sock = ssl.wrap_socket(s, self.keyfile, self.certfile)
-        ssl_sock.setblocking(False)
+    s.connect((pushServer, port))
+    ssl_sock = ssl.wrap_socket(s, keyfile, certfile)
+    ssl_sock.setblocking(False)
 
-        payload = json.dumps(body)
-        
-        token = binascii.unhexlify(self.deviceToken)
-        fmt = '!cH32sH{0:d}s'.format(len(payload))
-        cmd = '\x00'
-        message = struct.pack(fmt, cmd, len(token), token, len(payload), payload)
-        ssl_sock.write(message)
-        
-        ssl_sock.close()
-        
-        return True
+    payload = json.dumps(body)
+    
+    token = binascii.unhexlify(deviceToken)
+    fmt = '!cH32sH{0:d}s'.format(len(payload))
+    cmd = '\x00'
+    message = struct.pack(fmt, cmd, len(token), token, len(payload), payload)
+    ssl_sock.write(message)
+    
+    ssl_sock.close()
+    
+    return True
 
 if __name__ == '__main__':
-    push = Apns()
-    push.send(1, "teste", "default")
+    send()
