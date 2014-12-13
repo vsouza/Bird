@@ -38,3 +38,7 @@ __Windows__ => in development
 ## License
 
 [MIT License](http://vsouza.mit-license.org/) © Vinicius Souza
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vsouza/bird/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
