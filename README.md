@@ -1,7 +1,7 @@
-#Bird Push Server 
-[![Bird Project](https://raw.githubusercontent.com/vsouza/Bird/master/icon.png)](https://github.com/BirdPush)
+#Bird 
 
 iOS Push Notifications.
+<img src="https://raw.githubusercontent.com/vsouza/Bird/master/icon.png" align="right">  
 
 Bird is a project to facilitate the integration of push messages on any system. Enjoy and send your pull request.
 
