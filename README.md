@@ -1,7 +1,7 @@
 #Bird Push Server 
 [![Bird Project](https://raw.githubusercontent.com/vsouza/Bird/master/icon.png)](https://github.com/BirdPush)
 
-iOS, Android and Windows Push Notifications in one lib.
+iOS Push Notifications.
 
 Bird is a project to facilitate the integration of push messages on any system. Enjoy and send your pull request.
 
@@ -24,21 +24,8 @@ python apns.py --badge  1 --message "Test message" --sound "default"
 ## Reference
 
  * [APNS](https://developer.apple.com/library/IOs/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html)
- * [GCM](https://developer.android.com/google/gcm/index.html)
-
-
-### Status
-
-__iOS__ => √
-
-__Android__ => in development
-
-__Windows__ => in development
+ 
 
 ## License
 
 [MIT License](http://vsouza.mit-license.org/) © Vinicius Souza
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vsouza/bird/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
