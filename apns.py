@@ -20,28 +20,35 @@ certfile = config.certificates_dir + "/pushcert.pem"
 @click.option('--message', default="test message", help='string of message')
 @click.option('--sound', default="default", help='what sound you want?')
 def send(badge, message, sound):
+    try:
+        body = {}
+        body['aps'] = {'badge':badge, 'alert': message, 'sound': sound}
 
-    body = {}
-    body['aps'] = {'badge':badge, 'alert': message, 'sound': sound}
-
-    s = socket.socket(
-        socket.AF_INET, socket.SOCK_STREAM)
-
-    s.connect((pushServer, port))
-    ssl_sock = ssl.wrap_socket(s, keyfile, certfile)
-    ssl_sock.setblocking(False)
-
-    payload = json.dumps(body)
+        s = socket.socket(
+            socket.AF_INET, socket.SOCK_STREAM)
     
-    token = binascii.unhexlify(deviceToken)
-    fmt = '!cH32sH{0:d}s'.format(len(payload))
-    cmd = '\x00'
-    message = struct.pack(fmt, cmd, len(token), token, len(payload), payload)
-    ssl_sock.write(message)
+        s.connect((pushServer, port))
+        ssl_sock = ssl.wrap_socket(s, keyfile, certfile)
+        ssl_sock.setblocking(False)
     
-    ssl_sock.close()
-    
-    return True
+        payload = json.dumps(body)
+        
+        token = binascii.unhexlify(deviceToken)
+        fmt = '!cH32sH{0:d}s'.format(len(payload))
+        cmd = '\x00'
+        message = struct.pack(fmt, cmd, len(token), token, len(payload), payload)
+        ssl_sock.write(message)
+        
+        ssl_sock.close()
+        return True
+    except Exception as e:
+        print e
+        return False
 
 if __name__ == '__main__':
-    send()
+    if send():
+        print "Push notification sended"
+    else:
+        print "Error"
+    
+    
